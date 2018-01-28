@@ -18,7 +18,7 @@
     <div class="item item6">6</div>
     <div class="item item7">7</div>
     <div class="item item8">8</div>
-    <div class="item item8">💩</div>
+    <div class="item item8 fish">🐠</div>
     <div class="item item9">9</div>
     <div class="item item10">10</div>
     <div class="item item11">11</div>
@@ -48,6 +48,22 @@
       display: grid;
       grid-gap: 20px;
       grid-template-columns: repeat(5, 1fr);
+      grid-template-rows: repeat(5, 1fr);
+    }
+    .fish {
+      grid-column-start: 2;
+      grid-column-end: 5;
+      /* this is the shorthand */
+      grid-column: 2 / 5;
+      /* we can do the same with spans, start at 1 and span two */
+      grid-column: 1 / span 2;
+      /* if you dont know how many columns you will end up with you can use */
+      grid-column: 1 / -1; /* this will set a width 100% */
+      grid-column: 1 / -2; /* this will set a width of 100% minus the last column% */
+      /* we can do the same for rows but we do have to define the grid-template-row first */
+      /* these styles will be based on the explicit defined grid. */
+      grid-row: 1 / -1;
+      background: #BADA55;
     }
   </style>
 </body>
