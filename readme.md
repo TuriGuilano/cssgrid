@@ -107,3 +107,19 @@ We do need to specify the grid-template for both instances doh.
     background: #BADA55;
 }
 ```
+
+> Auto fit auto fill
+
+The main thing here is we can specify 
+``` 
+    .container {
+      display: grid;
+      grid-gap: 20px;
+      border: 10px solid var(--yellow);
+      grid-template-columns: repeat(auto-fit, 150px);
+    }
+```
+
+Our grid will then auto-fit these blocks into columns with a 150px width.
+auto-fill does the exact same thing, the difference however; when using auto-fit if there are only 4 elements of 150px and you want to place the last block at the end of the grid, it will place it after the last block, because the column ends there. With auto-fill it goes to the actual end of that column and places it there. Sort of the same as a justify-content: flex-end on a item.
+
